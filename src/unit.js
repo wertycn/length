@@ -1,5 +1,5 @@
 export class Unit {
-    Yard = 'yard';
-    Foot = 'f';
-    Inch = 'inch';
+    static Yard = 'yard';
+    static Foot = 'f';
+    static Inch = 'inch';
 }
