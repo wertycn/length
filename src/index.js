@@ -1,7 +1,9 @@
 export class Length {
   value
   unit
-
+  static YARD = "yard"
+  static FOOT = "f"
+  static INCH = "inch"
   constructor(val, uint) {
     this.value = val
     this.unit = uint
@@ -17,26 +19,26 @@ export class Length {
 
   parseTo(u) {
     let len = this
-    if (this.unit === 'yard') {
-      if (u === 'f') {
+    if (this.unit === Length.YARD) {
+      if (u === Length.FOOT) {
         len = new Length(this.value * 3, u)
-      } else if (u === 'inch') {
+      } else if (u === Length.INCH) {
         len = new Length(this.value * 36, u)
       }
     }
 
-    if (this.unit === 'inch') {
-      if (u === 'yard') {
+    if (this.unit === Length.INCH) {
+      if (u === Length.YARD) {
         len = new Length(this.value / 36, u)
-      } else if (u === 'f') {
+      } else if (u === Length.FOOT) {
         len = new Length(this.value / 12, u)
       }
     }
 
-    if (this.unit === 'f') {
-      if (u === 'yard') {
+    if (this.unit === Length.FOOT) {
+      if (u === Length.YARD) {
         len = new Length(this.value / 3, u)
-      } else if (u === 'inch') {
+      } else if (u === Length.INCH) {
         len = new Length(this.value * 12, u)
       }
     }
