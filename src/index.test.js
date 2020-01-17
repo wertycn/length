@@ -1,5 +1,5 @@
 import { Length } from './index'
-
+const Foot = Length.Foot
 describe('Length', () => {
   it("should 1 'foot' equals 1 'foot'", () => {
     const length = new Length(1, 'f')
